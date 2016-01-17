@@ -1,0 +1,16 @@
+database:
+    build: mysqlDB/
+    ports:
+        # Bind host machine port
+        - 127.0.0.1:3306:3306
+    environment:
+        # Toot password
+        $ref: local.mysql.yml
+    volumes:        
+        # Persistent data for mysql
+        - ./volumns/mysql:/var/lib/mysql
+        
+amp:
+    image: php:5.6-apache
+    ports:
+        - "127.0.0.1:80:80"
