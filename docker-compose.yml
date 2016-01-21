@@ -4,11 +4,15 @@ database:
         # Bind host machine port
         - 127.0.0.1:3306:3306
     environment:
-        # Toot password
-        $ref: local.mysql.yml
-    volumes:        
-        # Persistent data for mysql
-        - ./volumns/mysql:/var/lib/mysql
+        # Root password
+        MYSQL_ROOT_PASSWORD: "badboy"
+        DEV_SSH_PRIVATE_KEY: "/home/spnball/.ssh/acommerce.id_rsa"
+        DEV_SSH_HOST: "surapun@10.0.1.51" 
+        
+#        $ref: local.mysql.yml
+#    volumes:        
+#        # Persistent data for mysql
+#        - ./volumns/mysql:/var/lib/mysql
         
 amp:
     image: php:5.6-apache
