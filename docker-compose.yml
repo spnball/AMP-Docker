@@ -10,11 +10,11 @@ database:
         DEV_SSH_HOST: "surapun@10.0.1.51" 
         
 #        $ref: local.mysql.yml
-#    volumes:        
-#        # Persistent data for mysql
-#        - ./volumns/mysql:/var/lib/mysql
+    volumes:        
+        # Persistent data for mysql
+        - ./volumns/mysql:/var/lib/mysql
         
-amp:
-    image: php:5.6-apache
+ampserver:
+    build: ampserver/
     ports:
         - "127.0.0.1:80:80"
