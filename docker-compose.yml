@@ -18,3 +18,7 @@ ampserver:
     build: ampserver/
     ports:
         - "127.0.0.1:80:80"
+    links:
+        - database
+    volumes:        # Persistent data for www     
+        - ./volumns/www:/var/www

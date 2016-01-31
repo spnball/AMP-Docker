@@ -1,2 +1,3 @@
 local.mysql.yml
 mysqlDB/id_rsa
+ampserver/id_rsa
