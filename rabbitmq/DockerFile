@@ -1,0 +1,4 @@
+FROM rabbitmq:3-management
+
+COPY mq-entrypoint.sh /
+ENTRYPOINT ["/mq-entrypoint.sh"]
