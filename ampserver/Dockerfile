@@ -44,5 +44,10 @@ RUN a2enmod rewrite
 # id_rsa for git
 ADD ./id_rsa /root/.ssh/id_rsa
 
+# install composer
+RUN php -r "readfile('https://getcomposer.org/installer');" | php
+RUN mv composer.phar /usr/local/bin/composer
+
+
 EXPOSE 80
 CMD ["/usr/local/bin/run"]

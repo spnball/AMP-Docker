@@ -31,4 +31,9 @@ chown ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} ${AMP_DIR}/console/runtime ${AMP_DI
 mkdir -p ${AMP_DIR}/backend/www/assets
 chown ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} ${AMP_DIR}/backend/www/assets
 
+pushd .
+cd ${AMP_DIR}
+composer update
+popd
+
 exec /usr/sbin/apache2 -DFOREGROUND
